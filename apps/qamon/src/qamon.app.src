@@ -1,0 +1,15 @@
+{application, qamon,
+ [{description, "QA Monitoring Library"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {qamon_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env,[]},
+  {modules, []},
+
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
