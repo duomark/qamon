@@ -24,8 +24,9 @@ start_link() ->
 init({}) ->
   {ok, {#{strategy => rest_for_one},
         [
-         #{id => qamon_dynamic_sup, start => {qamon_dyn_sup, start_link, []}},
-         #{id => qamon_api,         start => {qamon_api,     start_link, []}}
+         #{id => qamon_status_api, start => {qamon_status_api, start_link, []}},
+         #{id => qamon_poller_sup, start => {qamon_poller_sup, start_link, []}},
+         #{id => qamon_controller, start => {qamon_controller, start_link, []}}
         ]
        }
   }.

@@ -10,7 +10,7 @@ is_valid() ->
 %%% All required directories must be present.
 required_dirs() ->
   QA_Home = filename:join(["/Users", "qatest"]),
-  [file:join(QA_Home, filename:join(Dir_Names))
+  [filename:join(QA_Home, filename:join(Dir_Names))
    || Dir_Names <- qa_subdirs()].
 
 qa_subdirs() ->

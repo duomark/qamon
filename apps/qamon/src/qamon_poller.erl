@@ -63,12 +63,12 @@ supervisor_spec(Name, Model, Max_History, Interval_Seconds)
        is_atom(Model), Model =/= undefined,
        is_integer(Max_History), Max_History > 0,
        is_integer(Interval_Seconds), Interval_Seconds >= 0 ->
-    #{id => Name, start => {?MODULE, start_link, [Name, Model, Max_History]}}.
+    #{id => Name, start => {?MODULE, start_link, [Name, Model, Max_History, Interval_Seconds]}}.
 
 %%%===================================================================
 %%% gen_server callbacks
 %%%===================================================================
--spec init({}) -> {ok, #state{}}.
+-spec init({atom(), module(), pos_integer(), pos_integer()}) -> {ok, #state{}}.
 init({Name, Model, Max_History, Interval_Seconds})
   when is_atom(Name),  Name  =/= undefined,
        is_atom(Model), Model =/= undefined,
